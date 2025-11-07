@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn1">Say Hello</button>
+  <!-- on clicking the button append hello to the page -->
+  
+  <script>
+    let btn = document.getElementById('btn1')
+    console.log(btn);
+
+    btn.addEventListener('click', function(){
+      console.log('Hello')
+      let newele = document.createElement('div')
+      newele.innerText = 'Hello'
+      console.log(newele)
+
+      let body = document.querySelector('body')
+      body.appendChild(newele)
+
+    });
+
+
+  </script>
+
+  
+</body>
+</html>

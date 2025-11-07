@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  .inActive {
+    background-color: red;
+  }
+
+  .active {
+    background-color: green;
+  }
+</style>
+
+<body>
+  <button class="inActive">I am Inactive</button>
+
+  <script>
+    let btn = document.querySelector('button')
+
+    btn.addEventListener('click', function () {
+      if (btn.classList.contains('inActive')) {
+        btn.classList.remove('inActive')
+        btn.classList.add('active')
+        btn.innerText = 'I am Active'
+      } else {
+        btn.classList.remove('active')
+        btn.classList.add('inActive')
+        btn.innerText = 'I am inActive'
+
+      }
+
+    })
+
+  </script>
+
+</body>
+
+
+</html>
