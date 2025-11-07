@@ -1,0 +1,66 @@
+<head>
+  <meta charset="UTF - 8" />
+  <meta http - equiv="X - UA - Compatible" content="IE = edge" />
+  <meta name="viewport" content="width = device - width, initial - scale = 1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-top: 5rem;
+    }
+
+    .card {
+      border: 1px solid;
+      height: 10rem;
+      width: 10rem;
+      margin: 2rem;
+    }
+
+    .red{
+        background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+
+  <script>
+    //const cards = document.querySelectorAll('.card')
+
+    //cards.forEach(card => {
+    //    card.addEventListener('click', function(){
+     //       card.style.backgroundColor = 'green';
+     //   })
+   // })
+
+   let allCards = document.querySelectorAll('.card');
+    console.log(allCards)
+    for(let i = 0; i < allCards.length; i++){
+      allCards[i].addEventListener('dblclick', function(){
+        //allCards[i].style.backgroundColor = 'purple';
+
+        // add the red class to the classList
+        allCards[i].classList.add('red');
+      })
+    }
+  </script>
+  
+</body>
+
+</html>
