@@ -1,22 +1,22 @@
 
-const obj = {
-   name : "Surya" ,
-   phone : 8173873,
-   hasAcar : true,
-   hobbies : ['Reading' , 'Eat Food']
-}
+// const obj = {
+//    name : "Surya" ,
+//    phone : 8173873,
+//    hasAcar : true,
+//    hobbies : ['Reading' , 'Eat Food']
+// }
 
 
-// setItem
-// getItem
-// removeItem
+// // setItem
+// // getItem
+// // removeItem
 
-const data = localStorage.setItem('Person' , JSON.stringify(obj))
+// const data = localStorage.setItem('Person' , JSON.stringify(obj))
 
 
-const datafromLS = JSON.parse(localStorage.getItem('Person'))
+// const datafromLS = JSON.parse(localStorage.getItem('Person'))
 
-console.log(datafromLS)
+// console.log(datafromLS)
 
 
 

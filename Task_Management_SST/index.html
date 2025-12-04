@@ -4,23 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanban Board-Class Work</title>
+    <title>TaskFlow - Focus Kanban Board</title>
+
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- Font Awesome (CSS) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Toolbox (Navbar) -->
+    <!-- Navbar / Toolbox -->
     <div class="toolbox-cont">
+      <!-- Brand -->
       <div class="brand-section">
         <h1 class="brand-title">
           <i class="fas fa-tasks"></i>
@@ -28,6 +33,7 @@
         </h1>
       </div>
 
+      <!-- Priority Filters -->
       <div class="toolbox-priority-cont">
         <span class="filter-label">Filter by Priority:</span>
         <div class="color-filters">
@@ -38,12 +44,20 @@
         </div>
       </div>
 
+      <!-- Actions -->
       <div class="action-btn-cont">
+        <!-- Search button -->
+        <div class="search-btn" title="Search Tasks">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <!-- Add task -->
         <div class="add-btn" title="Add New Task">
           <i class="fa-solid fa-plus"></i>
           <span class="btn-text">Add Task</span>
         </div>
 
+        <!-- Delete mode -->
         <div class="remove-btn" title="Delete Mode">
           <i class="fa-solid fa-trash"></i>
           <span class="btn-text">Delete</span>
@@ -51,19 +65,12 @@
       </div>
     </div>
 
-    <!-- Task Ticket -->
+    <!-- Tickets container -->
     <div class="main-cont">
-      <!-- Dynamic tickets will be added here -->
-       <!-- <div class="ticket-cont">
-         <div  class="ticket-color"></div>
-         <div class="ticket-id">1234567</div>
-         <div  class="task-area">Radom Task</div>
-         <div class="ticket-lock">
-            <i class="fa-solid fa-lock"></i>
-         </div>
-       </div> -->
+      <!-- Tickets are injected here by JS -->
     </div>
 
+    <!-- Create Task Modal -->
     <div class="modal-cont">
       <div class="modal-header">
         <h2>Create New Task</h2>
@@ -78,13 +85,13 @@
       <div class="priority-colors-container">
         <span class="priority-label">Select Priority:</span>
         <div class="priority-grid">
-          <div class="lightpink priority-color active " title="High Priority">
+          <div class="lightpink priority-color active" title="High Priority">
             <span>H</span>
           </div>
-          <div class="lightgreen priority-color " title="Medium Priority">
+          <div class="lightgreen priority-color" title="Medium Priority">
             <span>M</span>
           </div>
-          <div class="lightblue priority-color " title="Low Priority">
+          <div class="lightblue priority-color" title="Low Priority">
             <span>L</span>
           </div>
           <div class="black priority-color" title="Critical">
@@ -97,7 +104,65 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search tasks..."
+          autocomplete="off"
+        />
+      </div>
+    </div>
+
+    <!-- FOCUS MODE OVERLAY -->
+    <div class="focus-overlay">
+      <div class="focus-box">
+        <div class="focus-header">
+          <h2><i class="fa-solid fa-bullseye"></i> Focus Mode</h2>
+          <button
+            class="focus-close-btn"
+            aria-label="Close focus mode"
+            title="Close focus mode"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="focus-task-text">
+          <!-- Filled by JS -->
+        </div>
+
+        <div class="focus-timer">
+          <div class="focus-timer-display">25:00</div>
+          <div class="focus-controls">
+            <button class="focus-btn focus-start-btn">
+              <i class="fa-solid fa-play"></i>
+              Start
+            </button>
+            <button class="focus-btn focus-pause-btn">
+              <i class="fa-solid fa-pause"></i>
+              Pause
+            </button>
+            <button class="focus-btn focus-reset-btn">
+              <i class="fa-solid fa-rotate-left"></i>
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="focus-meta">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ding sound for completed tasks -->
+    <audio id="dingSound" src="ding.mp3" preload="auto"></audio>
+
+    <!-- JS -->
     <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
